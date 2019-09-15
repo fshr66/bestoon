@@ -8,7 +8,7 @@ class Expense(models.Model):
     amount = models.BigIntegerField()
     user = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
     def __str__(self):
-        return "{}-{}".format(self.date, self.amount)
+        return "{}-{}".format(self.text, self.amount)
 
 class Income(models.Model):
     text = models.CharField(max_length = 255)
@@ -16,5 +16,5 @@ class Income(models.Model):
     amount = models.BigIntegerField()
     user = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
     def __str__(self):
-        return "{}-{}".format(self.date, self.amount)
+        return "{}-{}".format(self.text, self.amount)
 
